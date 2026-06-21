@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paint Horse Palace | Luxury Cabin in Hochatown, Broken Bow OK</title>
+<meta name="description" content="Paint Horse Palace — a 3-bedroom luxury cabin in Hochatown, Broken Bow OK. Sleeps 10, hot tub, game loft, two decks, pet friendly. Minutes from Broken Bow Lake & Beavers Bend State Park.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<style>
+  :root{
+    --forest:#2f4131;
+    --forest-dark:#22301f;
+    --moss:#5c7a4f;
+    --bark:#6b4f3a;
+    --sand:#e9e2d4;
+    --cream:#f7f3ea;
+    --gold:#c08a3e;
+    --charcoal:#2b2b27;
+    --shadow:0 8px 30px rgba(0,0,0,.12);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;color:var(--charcoal);background:var(--cream);line-height:1.65}
+  h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:600;line-height:1.2}
+  h2{font-size:2rem;color:var(--forest);margin-bottom:.5rem}
+  h3{font-size:1.25rem;color:var(--forest-dark)}
+  a{color:var(--gold);text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .section{padding:72px 0}
+  .section.alt{background:var(--sand)}
+  .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--moss);font-weight:700;margin-bottom:8px}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(15,14,12,.97);backdrop-filter:blur(6px)}
+  nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding:8px 24px;max-width:1100px;margin:0 auto}
+  .brand-link{display:flex;align-items:center}
+  .navlogo{height:52px;width:auto;display:block}
+  .brand{color:#fff;font-family:Georgia,serif;font-size:1.2rem;letter-spacing:.04em}
+  .brand span{color:var(--gold)}
+  .navlinks{display:flex;gap:26px;align-items:center}
+  .navlinks a{color:#e9e2d4;font-size:.92rem;letter-spacing:.03em}
+  .navlinks a:hover{color:#fff}
+  .nav-cta{background:var(--gold);color:#fff!important;padding:9px 18px;border-radius:30px;font-weight:600}
+  .menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;padding:6px 8px}
+  @media(max-width:780px){
+    .menu-btn{display:block}
+    .navlinks{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;
+      gap:0;background:rgba(15,14,12,.99);padding:6px 0;border-top:1px solid rgba(255,255,255,.1);
+      box-shadow:0 12px 24px rgba(0,0,0,.35)}
+    .navlinks.open{display:flex}
+    .navlinks a{padding:14px 24px;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,.06)}
+    .navlinks a:last-child{border-bottom:0}
+    .nav-cta{margin:10px 24px 6px;text-align:center;border-radius:30px}
+  }
+
+  /* HERO */
+  .hero{position:relative;background:#0f0e0c;line-height:0}
+  .hero-banner{width:100%;height:auto;display:block;margin:0 auto;max-height:88vh;object-fit:cover}
+  .hero-bar{background:linear-gradient(180deg,#1a1813,#0f0e0c);color:#fff;line-height:1.5;
+    display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;padding:24px}
+  .hero-stats{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
+  .hero-stats div{font-size:.95rem;text-align:center;color:#e9e2d4}
+  .hero-stats b{display:block;font-size:1.55rem;font-family:Georgia,serif;color:var(--gold)}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-block;background:var(--gold);color:#fff;padding:14px 34px;border-radius:30px;font-weight:700;letter-spacing:.03em;box-shadow:var(--shadow);transition:transform .15s;line-height:1.2}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;border:2px solid var(--gold);color:#fff}
+  @media(max-width:600px){.hero-bar{gap:18px;padding:20px}.hero-stats{gap:18px}}
+
+  /* INTRO */
+  .intro p{font-size:1.12rem;max-width:820px}
+
+  /* HIGHLIGHTS GRID */
+  .grid{display:grid;gap:20px}
+  .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+  .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:880px){.grid.cols-3,.grid.cols-4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:540px){.grid.cols-3,.grid.cols-4,.grid.cols-2{grid-template-columns:1fr}}
+  .card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);border-top:4px solid var(--moss)}
+  .card .ico{font-size:1.8rem;margin-bottom:8px}
+  .card h3{margin-bottom:6px;font-size:1.1rem}
+  .card p{font-size:.96rem;color:#555}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:880px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gitem{position:relative;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;display:block}
+  .gitem img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .gitem:hover img{transform:scale(1.06)}
+  .gitem .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.7));
+     color:#fff;font-size:.82rem;padding:18px 12px 9px;letter-spacing:.02em}
+  .note{background:#fff8e8;border:1px dashed var(--gold);border-radius:10px;padding:14px 18px;font-size:.9rem;color:#7a5e2a;margin-top:18px}
+
+  /* AMENITIES */
+  .amen-cols{columns:3;column-gap:40px}
+  @media(max-width:780px){.amen-cols{columns:2}}
+  @media(max-width:480px){.amen-cols{columns:1}}
+  .amen-cols li{break-inside:avoid;list-style:none;padding:7px 0 7px 26px;position:relative;font-size:.97rem}
+  .amen-cols li:before{content:"✦";position:absolute;left:0;color:var(--moss)}
+  .rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+  @media(max-width:600px){.rooms{grid-template-columns:1fr}}
+  .room{background:var(--cream);border-radius:var(--radius);padding:20px;border-left:4px solid var(--bark)}
+  .room h3{font-size:1.05rem}
+  .room p{font-size:.94rem;color:#555}
+
+  /* AREA GUIDE */
+  .guide-group{margin-bottom:34px}
+  .guide-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+  @media(max-width:680px){.guide-list{grid-template-columns:1fr}}
+  .guide-item{background:#fff;border-radius:10px;padding:16px 18px;box-shadow:var(--shadow)}
+  .guide-item h3{font-size:1rem;margin-bottom:3px}
+  .guide-item p{font-size:.9rem;color:#555}
+  .pill{display:inline-block;background:var(--moss);color:#fff;font-size:.72rem;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+  /* place photo cards */
+  .places-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px}
+  @media(max-width:820px){.places-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.places-grid{grid-template-columns:1fr}}
+  .place-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;
+    text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+  .place-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.18)}
+  .place-card .pimg{aspect-ratio:3/2;width:100%;object-fit:cover;display:block;background:#ddd6c6;transition:transform .4s}
+  .place-card:hover .pimg{transform:scale(1.05)}
+  .place-card .pimg.fit{object-fit:contain;background:#f3efe6;padding:8px}
+  .place-card:hover .pimg.fit{transform:none}
+  .place-card .pwrap{overflow:hidden}
+  .place-card .pbody{padding:13px 16px 16px;position:relative}
+  .place-card h3{font-size:1.02rem;margin-bottom:4px;color:var(--forest)}
+  .place-card p{font-size:.88rem;color:#555;line-height:1.5}
+  .place-card .maplink{display:inline-block;margin-top:9px;font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:.03em}
+
+  /* CONTACT */
+  .contact{background:var(--forest);color:#fff}
+  .contact h2{color:#fff}
+  .contact .eyebrow{color:#bcd0ad}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  @media(max-width:780px){.contact-grid{grid-template-columns:1fr}}
+  .contact a{color:var(--gold)}
+  .contact a.btn{color:#fff}
+  .cbox{background:rgba(255,255,255,.06);border-radius:var(--radius);padding:28px}
+  .cbox label{display:block;font-size:.85rem;margin:12px 0 4px;letter-spacing:.04em}
+  .cbox input,.cbox textarea{width:100%;padding:11px;border:0;border-radius:8px;font-family:inherit;font-size:.95rem}
+  .cbox .btn{margin-top:18px;border:0;cursor:pointer;width:100%}
+  .big-num{font-size:1.8rem;font-family:Georgia,serif;color:var(--gold)}
+
+  /* REVIEW */
+  .review{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);max-width:760px;margin:0 auto;text-align:center}
+  .stars{color:var(--gold);font-size:1.3rem;letter-spacing:.1em}
+  .review p{font-size:1.15rem;font-style:italic;margin:12px 0;color:#444}
+  .review .who{font-weight:700;color:var(--forest)}
+
+  footer{background:var(--forest-dark);color:#cdd6c4;text-align:center;padding:30px 20px;font-size:.85rem}
+  footer a{color:#e9e2d4}
+
+  /* ---- MOBILE OPTIMIZATION ---- */
+  @media(max-width:700px){
+    .wrap{padding:0 18px}
+    .section{padding:46px 0}
+    h2{font-size:1.6rem}
+    .intro p{font-size:1.02rem}
+    .navlogo{height:44px}
+    .hero-banner{max-height:none}
+    .hero-bar{flex-direction:column;gap:16px;padding:20px 16px}
+    .hero-actions{width:100%}
+    .hero-actions .btn{flex:1;text-align:center;padding:14px 10px;font-size:.95rem}
+    .hero-stats{gap:14px 26px}
+    .hero-stats b{font-size:1.35rem}
+    .grid.cols-4,.grid.cols-3,.grid.cols-2{grid-template-columns:repeat(2,1fr);gap:14px}
+    .card{padding:18px}
+    .card h3{font-size:1rem}
+    .card p{font-size:.88rem}
+    .gallery{grid-template-columns:repeat(2,1fr);gap:10px}
+    .rooms{grid-template-columns:1fr}
+    .review p{font-size:1.02rem}
+    .places-grid{gap:14px}
+    .contact .big-num{font-size:1.5rem}
+  }
+  @media(max-width:430px){
+    .grid.cols-4,.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+    .amen-cols{columns:1}
+    .hero-stats{gap:12px 20px}
+  }
+  /* avoid accidental horizontal scroll on phones */
+  html,body{max-width:100%;overflow-x:hidden}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="brand-link">
+      <img class="navlogo" src="images/logo.png" alt="Paint Horse Palace"
+           onerror="this.style.display='none';document.getElementById('brandText').style.display='inline'">
+      <span id="brandText" class="brand" style="display:none">Paint Horse <span>Palace</span></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="#cabin" onclick="closeMenu()">The Cabin</a>
+      <a href="#amenities" onclick="closeMenu()">Amenities</a>
+      <a href="#gallery" onclick="closeMenu()">Gallery</a>
+      <a href="#area" onclick="closeMenu()">Area Guide</a>
+      <a href="https://brokenbowlakecabinrentals.com/cabins-post/paint-horse-palace/#book-now" target="_blank" class="nav-cta" onclick="closeMenu()">Book Now</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<a id="top"></a>
+<section class="hero">
+  <img class="hero-banner" src="images/hero-banner.png"
+       alt="Paint Horse Palace — Luxury Cabin Rental in Broken Bow, Oklahoma"
+       onerror="this.onerror=null;this.src='images/Property%20Pic.jpg'">
+</section>
+<div class="hero-bar">
+  <div class="hero-stats">
+    <div><b>10</b> Guests</div>
+    <div><b>3+</b> Bedrooms</div>
+    <div><b>3</b> Bathrooms</div>
+    <div><b>1,878</b> Sq. Ft.</div>
+  </div>
+  <div class="hero-actions">
+    <a href="https://brokenbowlakecabinrentals.com/cabins-post/paint-horse-palace/#book-now" target="_blank" class="btn">Check Availability</a>
+    <a href="#area" class="btn ghost">Explore the Area</a>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="section intro">
+  <div class="wrap">
+    <p class="eyebrow">Welcome</p>
+    <h2>A spacious retreat where comfort, fun &amp; nature come together</h2>
+    <p style="margin-top:16px">Surrounded by tall pines, Paint Horse Palace offers peaceful privacy while keeping you minutes from
+    local dining, shops, wineries, and attractions — and just a short drive from Broken Bow Lake and Beavers Bend State Park.
+    Inside, a bright great room with natural pine walls, stone accents, and large windows creates a warm, inviting atmosphere.
+    Whether you're here to relax or to adventure, this is your ideal home base in Hochatown.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="section alt" id="cabin">
+  <div class="wrap">
+    <p class="eyebrow">Why You'll Love It</p>
+    <h2>Cabin Highlights</h2>
+    <div class="grid cols-4" style="margin-top:26px">
+      <div class="card"><div class="ico">🛁</div><h3>Private Hot Tub</h3><p>Soak under the stars after a day on the trails or lake.</p></div>
+      <div class="card"><div class="ico">🎮</div><h3>Loft Game Room</h3><p>Pac-Man arcade, foosball, and board games for all ages.</p></div>
+      <div class="card"><div class="ico">🔥</div><h3>Two Decks</h3><p>Outdoor fireplace &amp; TV up top, ping pong below, wooded views all around.</p></div>
+      <div class="card"><div class="ico">🪵</div><h3>Fire Pit</h3><p>String-lit fire pit with firewood provided year-round.</p></div>
+      <div class="card"><div class="ico">🛝</div><h3>Kids Playset</h3><p>A backyard playset plus cornhole for fun-filled afternoons.</p></div>
+      <div class="card"><div class="ico">🍳</div><h3>Fully Stocked Kitchen</h3><p>Everything you need to cook, plus a coffee &amp; cocoa station.</p></div>
+      <div class="card"><div class="ico">🐾</div><h3>Pet Friendly</h3><p>Bring the whole family — four-legged members included.</p></div>
+      <div class="card"><div class="ico">🔌</div><h3>Level 2 EV Charger</h3><p>Charge your electric vehicle right at the cabin.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <p class="eyebrow">Take a Look</p>
+    <h2>Gallery</h2>
+    <div class="gallery" style="margin-top:24px">
+      <a class="gitem" target="_blank" href="images/Front%20of%20House.jpg"><img loading="lazy" src="images/Front%20of%20House.jpg" alt="Paint Horse Palace exterior at dusk"><span class="cap">Tucked among the tall pines</span></a>
+      <a class="gitem" target="_blank" href="images/Greatroom.jpg"><img loading="lazy" src="images/Greatroom.jpg" alt="Great room with natural pine walls"><span class="cap">Bright great room &amp; pine walls</span></a>
+      <a class="gitem" target="_blank" href="images/Living%20Room%203.jpg"><img loading="lazy" src="images/Living%20Room%203.jpg" alt="Living room with stone fireplace"><span class="cap">Living room &amp; stone fireplace</span></a>
+      <a class="gitem" target="_blank" href="images/Kitchen.jpg"><img loading="lazy" src="images/Kitchen.jpg" alt="Fully equipped kitchen"><span class="cap">Fully equipped kitchen</span></a>
+      <a class="gitem" target="_blank" href="images/Kithen%20area.jpg"><img loading="lazy" src="images/Kithen%20area.jpg" alt="Kitchen and dining area"><span class="cap">Dining &amp; kitchen</span></a>
+      <a class="gitem" target="_blank" href="images/Master%20Bedroom.jpg"><img loading="lazy" src="images/Master%20Bedroom.jpg" alt="King master suite"><span class="cap">King master suite</span></a>
+      <a class="gitem" target="_blank" href="images/Master%20Bathroom.jpg"><img loading="lazy" src="images/Master%20Bathroom.jpg" alt="Master bathroom soaking tub"><span class="cap">Master suite soaking tub</span></a>
+      <a class="gitem" target="_blank" href="images/Second%20Bedroom.jpg"><img loading="lazy" src="images/Second%20Bedroom.jpg" alt="Queen bedroom"><span class="cap">Comfortable queen bedroom</span></a>
+      <a class="gitem" target="_blank" href="images/Third%20Bedroom.jpg"><img loading="lazy" src="images/Third%20Bedroom.jpg" alt="Bunk room"><span class="cap">Bunk room for the kids</span></a>
+      <a class="gitem" target="_blank" href="images/Loft.jpg"><img loading="lazy" src="images/Loft.jpg" alt="Loft game lounge"><span class="cap">Loft game lounge</span></a>
+      <a class="gitem" target="_blank" href="images/Back%20Patio%202.jpg"><img loading="lazy" src="images/Back%20Patio%202.jpg" alt="Covered deck with hot tub and outdoor fireplace"><span class="cap">Covered deck &amp; hot tub</span></a>
+      <a class="gitem" target="_blank" href="images/Backyard.jpg"><img loading="lazy" src="images/Backyard.jpg" alt="Fire pit at dusk"><span class="cap">Fire pit under the pines</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="section alt" id="amenities">
+  <div class="wrap">
+    <p class="eyebrow">Everything Included</p>
+    <h2>Amenities</h2>
+    <ul class="amen-cols" style="margin-top:20px">
+      <li>Sleeps up to 10 guests</li>
+      <li>1,878 sq. ft.</li>
+      <li>3 bedrooms + bunk room</li>
+      <li>3 full bathrooms</li>
+      <li>1 King, 2 Queen &amp; 4 Twin beds</li>
+      <li>Private hot tub</li>
+      <li>Fire pit w/ string lights (wood provided)</li>
+      <li>Two decks</li>
+      <li>Outdoor fireplace &amp; outdoor TV</li>
+      <li>Ping pong table</li>
+      <li>Cornhole game</li>
+      <li>Kids playset</li>
+      <li>Pac-Man arcade &amp; foosball</li>
+      <li>5 Smart TVs with Roku</li>
+      <li>2 gas fireplaces</li>
+      <li>Fully equipped kitchen</li>
+      <li>Keurig &amp; 12-cup drip coffee</li>
+      <li>Refrigerator w/ ice maker</li>
+      <li>Dishwasher &amp; microwave</li>
+      <li>Washer &amp; dryer</li>
+      <li>Gas grill (propane provided)</li>
+      <li>Central heat &amp; air</li>
+      <li>Free Wi-Fi</li>
+      <li>Level 2 EV charger</li>
+      <li>Pet friendly</li>
+      <li>Large parking area</li>
+    </ul>
+
+    <h3 style="margin-top:40px">Beds &amp; Baths</h3>
+    <div class="rooms">
+      <div class="room"><h3>King Master (Main Floor)</h3><p>Private ensuite with luxurious soaking tub, walk-in tile shower &amp; double vanity.</p></div>
+      <div class="room"><h3>Queen Bedroom (Upstairs)</h3><p>Comfortable queen room with its own TV.</p></div>
+      <div class="room"><h3>Bunk Room (Upstairs)</h3><p>Queen-sized bed plus two built-in twin loft beds — great for kids.</p></div>
+      <div class="room"><h3>Game Loft</h3><p>Two additional twin beds alongside the arcade &amp; foosball.</p></div>
+      <div class="room"><h3>Bathroom #2 (Main Floor)</h3><p>Walk-in tile shower &amp; single vanity serving the living area.</p></div>
+      <div class="room"><h3>Bathroom #3 (Upstairs)</h3><p>Walk-in tile shower &amp; single vanity for the upstairs rooms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW -->
+<section class="section">
+  <div class="wrap">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>"Beautiful cabin in a peaceful area. Very easy to find. Great host, had no problems with anything. Would definitely book again."</p>
+      <div class="who">— Shanise, February 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA GUIDE -->
+<section class="section alt" id="area">
+  <div class="wrap">
+    <p class="eyebrow">Your Local Guide</p>
+    <h2>Explore Broken Bow &amp; Hochatown</h2>
+    <p style="max-width:780px;margin:10px 0 30px">Everything is close. The cabin sits right in the Hochatown corridor —
+    minutes from the lake, the state park, restaurants, and wineries. Here's where to start.</p>
+
+    <div class="guide-group">
+      <span class="pill">Top Things To Do</span>
+      <div class="places-grid">
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Broken%20Bow%20Lake%20Oklahoma"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/broken-bow-lake.jpg" alt="Broken Bow Lake"></div><div class="pbody"><h3>Broken Bow Lake</h3><p>Crystal-clear 12-mile lake with ~180 miles of shoreline — boating, swimming, paddleboarding &amp; great fishing.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Beavers%20Bend%20State%20Park%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/beavers-bend-state-park.jpg" alt="Beavers Bend State Park"></div><div class="pbody"><h3>Beavers Bend State Park</h3><p>Hiking, the nature center, river floats, mini-golf &amp; horseback riding in a pine-covered wonderland.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Mountain%20Fork%20River%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/mountain-fork-river.jpg" alt="Mountain Fork River"></div><div class="pbody"><h3>Mountain Fork River</h3><p>Float, kayak or tube — plus world-class year-round trout fly-fishing below the dam.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Beavers%20Bend%20Safari%20Park%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/beavers-bend-safari-park.jpg" alt="Beavers Bend Safari Park"></div><div class="pbody"><h3>Beavers Bend Safari Park</h3><p>Drive-thru animal park with 200+ animals across 30+ species. A family favorite.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Maze%20of%20Hochatown%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/the-maze.jpg" alt="The Maze of Hochatown"></div><div class="pbody"><h3>The Maze of Hochatown</h3><p>A 29,000 sq ft outdoor maze — race the clock with the whole family.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hochatown%20Escape%20Games%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/escape-games.jpg" alt="
