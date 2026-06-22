@@ -126,7 +126,10 @@
   .place-card:hover .pimg{transform:scale(1.05)}
   .place-card .pimg.fit{object-fit:contain;background:#f3efe6;padding:8px}
   .place-card:hover .pimg.fit{transform:none}
-  .place-card .pwrap{overflow:hidden}
+  .place-card .pwrap{overflow:hidden;position:relative}
+  .fav-badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--gold);color:#fff;
+    font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:5px 11px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.35)}
   .place-card .pbody{padding:13px 16px 16px;position:relative}
   .place-card h3{font-size:1.02rem;margin-bottom:4px;color:var(--forest)}
   .place-card p{font-size:.88rem;color:#555;line-height:1.5}
@@ -352,4 +355,94 @@
         <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Mountain%20Fork%20River%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/mountain-fork-river.jpg" alt="Mountain Fork River"></div><div class="pbody"><h3>Mountain Fork River</h3><p>Float, kayak or tube — plus world-class year-round trout fly-fishing below the dam.</p><span class="maplink">View on Map →</span></div></a>
         <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Beavers%20Bend%20Safari%20Park%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/beavers-bend-safari-park.jpg" alt="Beavers Bend Safari Park"></div><div class="pbody"><h3>Beavers Bend Safari Park</h3><p>Drive-thru animal park with 200+ animals across 30+ species. A family favorite.</p><span class="maplink">View on Map →</span></div></a>
         <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Maze%20of%20Hochatown%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/the-maze.jpg" alt="The Maze of Hochatown"></div><div class="pbody"><h3>The Maze of Hochatown</h3><p>A 29,000 sq ft outdoor maze — race the clock with the whole family.</p><span class="maplink">View on Map →</span></div></a>
-        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hochatown%20Escape%20Games%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/escape-games.jpg" alt="
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hochatown%20Escape%20Games%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/escape-games.jpg" alt="Hochatown Escape Games"></div><div class="pbody"><h3>Hochatown Escape Games</h3><p>Team up to crack the clues and break out before time runs out.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=BigFoot%20Speedway%20Hochatown%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/go-karts.jpg" alt="Go-karts"></div><div class="pbody"><h3>BigFoot Speedway Go-Karts</h3><p>Race around the track — fun for kids and grown-ups alike.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=ziplining%20Hochatown%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/ziplines.jpg" alt="Ziplining"></div><div class="pbody"><h3>Ziplining</h3><p>Soar through the forest canopy on thrilling zipline courses.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=horseback%20riding%20Beavers%20Bend%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/horseback-riding.jpg" alt="Horseback riding"></div><div class="pbody"><h3>Horseback Riding</h3><p>Guided trail rides through the park's game reserve and surrounding forest.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Beavers%20Bend%20Mining%20Co%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg fit" loading="lazy" src="images/places/gem-mining.png" alt="Beaver's Bend Mining Co."></div><div class="pbody"><h3>Beaver's Bend Mining Co.</h3><p>Pan for gemstones and dig for fossils — a guaranteed hit with the kids.</p><span class="maplink">View on Map →</span></div></a>
+      </div>
+    </div>
+
+    <div class="guide-group">
+      <span class="pill">Sip &amp; Savor</span>
+      <div class="places-grid">
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Mountain%20Fork%20Brewery%20Hochatown%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/mountain-fork-brewery.jpg" alt="Mountain Fork Brewery"></div><div class="pbody"><h3>Mountain Fork Brewery</h3><p>Award-winning craft beer right next door to the cabin.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fish%20Tales%20Winery%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/fish-tales-winery.jpg" alt="Fish Tales Winery"></div><div class="pbody"><h3>Fish Tales Winery &amp; Bistro</h3><p>Sip local wines with a bite to eat in a relaxed setting.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Girls%20Gone%20Wine%20Hochatown%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/girls-gone-wine.png" alt="Girls Gone Wine"></div><div class="pbody"><h3>Girls Gone Wine</h3><p>A quirky, fun tasting room with two Hochatown locations.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hochatown%20Distilling%20Co%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/hochatown-distilling.jpg" alt="Hochatown Distilling Co."></div><div class="pbody"><h3>Hochatown Distilling Co.</h3><p>Small-batch bourbon, rye &amp; moonshine tastings.</p><span class="maplink">View on Map →</span></div></a>
+      </div>
+    </div>
+
+    <div class="guide-group">
+      <span class="pill">Where To Eat</span>
+      <div class="places-grid">
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Grateful%20Head%20Pizza%20Oven%20Tap%20Room%20Hochatown%20OK"><div class="pwrap"><span class="fav-badge">★ Our Favorite</span><img class="pimg fit" loading="lazy" src="images/places/grateful-head.jpg" alt="Grateful Head Pizza"></div><div class="pbody"><h3>Grateful Head Pizza &amp; Tap Room</h3><p>The local icon — wood-fired pizzas, a big beer list &amp; live music. <strong>A Paint Horse Palace favorite!</strong></p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Abendigos%20Grill%20Patio%20Broken%20Bow%20OK"><div class="pwrap"><span class="fav-badge">★ Our Favorite</span><img class="pimg" loading="lazy" src="images/places/abendigos-grill.jpg" alt="Abendigo's Grill &amp; Patio"></div><div class="pbody"><h3>Abendigo's Grill &amp; Patio</h3><p>Hand-cut steaks &amp; seafood under the pines — the go-to nice dinner. <strong>A Paint Horse Palace favorite!</strong></p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Eat%20Out%20Hochatown%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/the-eat-out.jpg" alt="The Eat Out"></div><div class="pbody"><h3>The Eat Out</h3><p>Some of the best burgers around, and well priced.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hochatown%20Saloon%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/hochatown-saloon.jpg" alt="Hochatown Saloon"></div><div class="pbody"><h3>Hochatown Saloon</h3><p>Pub grub by day, live-music dance hall by night.</p><span class="maplink">View on Map →</span></div></a>
+      </div>
+    </div>
+
+    <div class="guide-group">
+      <span class="pill">Casinos &amp; Groceries</span>
+      <div class="places-grid">
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Choctaw%20Landing%20Hochatown%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/choctaw-landing.jpg" alt="Choctaw Landing"></div><div class="pbody"><h3>Choctaw Landing</h3><p>Hochatown's resort casino — hotel, slots, table games &amp; dining.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Choctaw%20Casino%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg fit" loading="lazy" src="images/places/choctaw-casino.jpg" alt="Choctaw Casino Broken Bow"></div><div class="pbody"><h3>Choctaw Casino — Broken Bow</h3><p>In-town casino with gaming, dining &amp; entertainment.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Choctaw%20Landing%20Mercantile%20Hochatown%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/choctaw-mercantile.jpg" alt="Choctaw Landing Mercantile"></div><div class="pbody"><h3>Choctaw Mercantile</h3><p>Groceries, deli, Starbucks &amp; fuel right in Hochatown.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Pruetts%20Food%20Broken%20Bow%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/pruetts.jpg" alt="Pruett's Food"></div><div class="pbody"><h3>Pruett's Food</h3><p>Broken Bow's full grocery store — best for a real stock-up.</p><span class="maplink">View on Map →</span></div></a>
+        <a class="place-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Walmart%20Supercenter%20Idabel%20OK"><div class="pwrap"><img class="pimg" loading="lazy" src="images/places/idabel-walmart.jpg" alt="Walmart Supercenter Idabel"></div><div class="pbody"><h3>Walmart Supercenter — Idabel</h3><p>Largest supercenter, ~25 min south, for big grocery runs.</p><span class="maplink">View on Map →</span></div></a>
+      </div>
+    </div>
+
+    <div class="guide-group">
+      <span class="pill">Good To Know</span>
+      <div class="guide-list">
+        <div class="guide-item"><h3>Getting Here</h3><p>~3–3.5 hrs from Dallas/DFW, ~4 hrs from Oklahoma City. Most guests drive in.</p></div>
+        <div class="guide-item"><h3>Best Seasons</h3><p>Fall foliage &amp; summer lake season are peak; cozy winters &amp; spring trout fishing are quieter gems.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK / CONTACT -->
+<section class="section contact" id="book">
+  <div class="wrap">
+    <p class="eyebrow">Reserve Your Stay</p>
+    <h2>Book Paint Horse Palace</h2>
+    <div style="margin-top:30px;text-align:center;max-width:680px;margin-left:auto;margin-right:auto">
+      <h3 style="color:#fff">Ready to plan your trip?</h3>
+      <p style="margin:12px 0 26px;color:#dfe6d6">Check live availability and book your stay directly on our reservation site —
+      or call with any questions. We'll help you plan the perfect Hochatown getaway.</p>
+      <a class="btn" style="font-size:1.1rem;padding:16px 44px;color:#fff" href="https://brokenbowlakecabinrentals.com/cabins-post/paint-horse-palace/#book-now" target="_blank">Check Availability &amp; Book →</a>
+      <div style="margin-top:30px;color:#dfe6d6">
+        <p class="big-num">📞 580-306-6700</p>
+        <p style="margin:10px 0"><a href="mailto:info@brokenbowlakecabinrentals.com">info@brokenbowlakecabinrentals.com</a></p>
+        <p style="margin-top:14px"><b>Address:</b> 47 Paint Horse Circle, Broken Bow, OK 74728
+          &nbsp;·&nbsp; <a href="https://maps.app.goo.gl/3p29jieusoAyPRzp7" target="_blank">📍 Google Maps</a></p>
+        <p style="margin-top:16px;font-size:.85rem">Managed by Broken Bow Lake Cabin Rentals, LLC · 1011 N. Lukfata Trail Rd., Broken Bow, OK 74728</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>Paint Horse Palace</b> · 47 Paint Horse Circle, Broken Bow, OK 74728 · 580-306-6700</p>
+  <p style="margin-top:8px">© 2026 Paint Horse Palace. Draft website — all details subject to verification.</p>
+</footer>
+
+<script>
+  function toggleMenu(btn){
+    var n=document.getElementById('navlinks');
+    var open=n.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?'✕':'☰';
+  }
+  function closeMenu(){
+    var n=document.getElementById('navlinks');
+    n.classList.remove('open');
+    var b=document.querySelector('.menu-btn');
+    if(b){b.setAttribute('aria-expanded','false');b.textContent='☰';}
+  }
+</script>
+</body>
+</html>
