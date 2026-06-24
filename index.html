@@ -154,6 +154,13 @@
   .stars{color:var(--gold);font-size:1.3rem;letter-spacing:.1em}
   .review p{font-size:1.15rem;font-style:italic;margin:12px 0;color:#444}
   .review .who{font-weight:700;color:var(--forest)}
+  .reviews-wrap{max-width:760px;margin:0 auto}
+  .review-form{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-top:22px;text-align:left}
+  .review-form h3{margin-bottom:4px}
+  .review-form label{display:block;font-size:.85rem;font-weight:700;margin:12px 0 4px;color:var(--forest);letter-spacing:.02em}
+  .review-form input,.review-form select,.review-form textarea{width:100%;padding:11px;border:1px solid #d8d0bf;border-radius:8px;font-family:inherit;font-size:.95rem;background:#fdfbf7}
+  .review-form textarea{resize:vertical}
+  .review-form .btn{margin-top:18px;border:0;cursor:pointer}
 
   footer{background:var(--forest-dark);color:#cdd6c4;text-align:center;padding:30px 20px;font-size:.85rem}
   footer a{color:#e9e2d4}
@@ -328,13 +335,45 @@
   </div>
 </section>
 
-<!-- REVIEW -->
-<section class="section">
+<!-- REVIEWS -->
+<section class="section" id="reviews">
   <div class="wrap">
-    <div class="review">
-      <div class="stars">★★★★★</div>
-      <p>"Beautiful cabin in a peaceful area. Very easy to find. Great host, had no problems with anything. Would definitely book again."</p>
-      <div class="who">— Shanise, February 2026</div>
+    <p class="eyebrow" style="text-align:center">Guest Reviews</p>
+    <h2 style="text-align:center">What Our Guests Say</h2>
+    <div class="reviews-wrap">
+      <div id="reviewList">
+        <div class="review" style="margin-top:24px">
+          <div class="stars">★★★★★</div>
+          <p>"Beautiful cabin in a peaceful area. Very easy to find. Great host, had no problems with anything. Would definitely book again."</p>
+          <div class="who">— Shanise, February 2026</div>
+        </div>
+      </div>
+
+      <div class="review-form" id="reviewFormWrap">
+        <h3>Leave a Review</h3>
+        <p style="font-size:.9rem;color:#666">Stayed with us? We'd love to hear about your experience.</p>
+        <form id="reviewForm" name="reviews" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="reviews">
+          <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+          <label for="r_name">Your name</label>
+          <input id="r_name" type="text" name="name" maxlength="80" required>
+          <label for="r_loc">Location <span style="font-weight:400;color:#999">(optional)</span></label>
+          <input id="r_loc" type="text" name="location" maxlength="80" placeholder="e.g., Dallas, TX">
+          <label for="r_rating">Rating</label>
+          <select id="r_rating" name="rating" required>
+            <option value="">Select a rating…</option>
+            <option value="5 stars">★★★★★ — Excellent</option>
+            <option value="4 stars">★★★★ — Great</option>
+            <option value="3 stars">★★★ — Good</option>
+            <option value="2 stars">★★ — Fair</option>
+            <option value="1 star">★ — Poor</option>
+          </select>
+          <label for="r_text">Your review</label>
+          <textarea id="r_text" name="review" rows="4" maxlength="1000" required placeholder="Tell future guests about your stay…"></textarea>
+          <button class="btn" type="submit">Submit Review</button>
+        </form>
+        <p style="font-size:.78rem;color:#999;margin-top:12px">4 &amp; 5-star reviews post automatically. Every review is shared with the host.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -442,6 +481,60 @@
     n.classList.remove('open');
     var b=document.querySelector('.menu-btn');
     if(b){b.setAttribute('aria-expanded','false');b.textContent='☰';}
+  }
+
+  /* ----- Guest reviews (automated) ----- */
+  function phpRenderReview(rv){
+    var n=Math.max(1,Math.min(5,parseInt(rv.rating,10)||5));
+    var el=document.createElement('div');
+    el.className='review';
+    el.style.marginTop='18px';
+    var stars=document.createElement('div'); stars.className='stars'; stars.textContent='★★★★★'.slice(0,n);
+    var p=document.createElement('p'); p.textContent='"'+(rv.review||'')+'"';
+    var who=document.createElement('div'); who.className='who';
+    who.textContent='— '+(rv.name||'Guest')+(rv.location?(', '+rv.location):'');
+    el.appendChild(stars); el.appendChild(p); el.appendChild(who);
+    return el;
+  }
+  (function loadReviews(){
+    var list=document.getElementById('reviewList');
+    if(!list) return;
+    fetch('/.netlify/functions/get-reviews').then(function(r){return r.json();}).then(function(data){
+      if(!Array.isArray(data)||!data.length) return;
+      var frag=document.createDocumentFragment();
+      data.forEach(function(rv){ frag.appendChild(phpRenderReview(rv)); });
+      list.insertBefore(frag, list.firstChild);
+    }).catch(function(){});
+  })();
+  (function(){
+    var form=document.getElementById('reviewForm');
+    if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var fd=new FormData(form);
+      var ratingNum=parseInt((fd.get('rating')||'').toString(),10);
+      var review={name:(fd.get('name')||'').toString(),location:(fd.get('location')||'').toString(),
+                  rating:String(ratingNum||''),review:(fd.get('review')||'').toString()};
+      // 1) email every review to the host via Netlify Forms
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:new URLSearchParams(fd).toString()}).catch(function(){});
+      // 2) store 4-5 star reviews for public display
+      fetch('/.netlify/functions/submit-review',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(review)}).then(function(r){return r.json();}).then(function(res){
+          if(res&&res.posted){
+            var list=document.getElementById('reviewList');
+            if(list) list.insertBefore(phpRenderReview(review), list.firstChild);
+          }
+          phpThanks(ratingNum>=4);
+        }).catch(function(){ phpThanks(ratingNum>=4); });
+    });
+  })();
+  function phpThanks(posted){
+    var wrap=document.getElementById('reviewFormWrap');
+    if(!wrap) return;
+    wrap.innerHTML='<h3>Thank you! 🐴</h3><p style="font-size:.95rem;color:#555;margin-top:8px">'+
+      (posted ? 'Your review has been posted — thanks for sharing your stay!'
+              : 'Thanks for your feedback! It\'s been sent to our host, who will follow up.')+'</p>';
   }
 </script>
 </body>
