@@ -1,0 +1,6 @@
+# Netlify configuration for Paint Horse Palace
+# Static site (no build step) + serverless functions for automated reviews.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"

@@ -1,0 +1,9 @@
+{
+  "name": "paint-horse-palace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paint Horse Palace cabin website with automated guest reviews",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
